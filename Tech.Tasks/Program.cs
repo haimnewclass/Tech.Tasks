@@ -14,6 +14,14 @@ namespace Tech.Tasks
         }
         static void Main(string[] args)
         {
+
+            int number = int.Parse(Console.ReadLine());
+            WriteStart ws = new WriteStart();
+            ws.linesNumer = number ;
+        
+            ws.writeToFileAsTask(@"C:\Users\ASI\source\repos\Tech.Tasks\Tech.Tasks\Output\number.txt");
+
+
             MyPaint myPaint = new MyPaint();
             //myPaint.Run();            
 
