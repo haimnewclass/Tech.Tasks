@@ -18,7 +18,17 @@ namespace Tech.Tasks
             //myPaint.Run();            
 
             Food f = new Food();
-            f.Run();
+            //f.Run();
+
+            TaskSample ts = new TaskSample();
+            ts.myAction1();
+            ts.myAction2();
+
+
+
+
+            ts.Run();
+            Console.ReadLine();
         }
 
     }

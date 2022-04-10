@@ -7,17 +7,17 @@ using System.Threading.Tasks;
 namespace Tech.Tasks
 {
     public class Item
-    {
-        public delegate int CalcTask(int itemPrice);
-
-
-        public int CalculatePrice(int itemPrice, CalcTask func)
+    {      
+        public int CalculatePrice(int itemPrice, CalcTask callToTaxcalculation)
         {
             int ret = 0;
 
-            ret = func(itemPrice * 2);
+            ret = callToTaxcalculation(itemPrice);
 
             return ret;
         }
+
+        public delegate int CalcTask(int itemPrice);
+
     }
 }
