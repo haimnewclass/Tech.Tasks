@@ -15,7 +15,10 @@ namespace Tech.Tasks
         static void Main(string[] args)
         {
             MyPaint myPaint = new MyPaint();
-            myPaint.Run();            
+            //myPaint.Run();            
+
+            Food f = new Food();
+            f.Run();
         }
 
     }
