@@ -30,5 +30,29 @@ namespace Tech.Tasks
             Task.Run(myAction1);
             Task.Run(myAction2);
         }
+
+        public async void RunLong()
+        {
+           await CreatePrintLongTask();
+
+           Console.WriteLine("After Start CreatePrintLongTask");
+        }
+
+
+        public Task CreatePrintLongTask()
+        {           
+            Task ret = Task.Factory.StartNew(() =>
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    Console.WriteLine(i);
+                    System.Threading.Thread.Sleep(1000);
+                }
+            });
+
+            return ret;
+        }
+
+
     }
 }

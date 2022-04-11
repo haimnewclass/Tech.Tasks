@@ -14,7 +14,11 @@ namespace Tech.Tasks
         }
         static void Main(string[] args)
         {
+            SystemData sd = new SystemData();
+            sd.Run();
 
+            TaskSample ts = new TaskSample();
+            ts.RunLong();
             int number = int.Parse(Console.ReadLine());
             WriteStart ws = new WriteStart();
             ws.linesNumer = number ;
@@ -28,7 +32,7 @@ namespace Tech.Tasks
             Food f = new Food();
             //f.Run();
 
-            TaskSample ts = new TaskSample();
+          
             ts.myAction1();
             ts.myAction2();
 
