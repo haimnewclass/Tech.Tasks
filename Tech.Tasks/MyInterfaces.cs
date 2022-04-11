@@ -8,11 +8,19 @@ using System.Threading.Tasks;
 namespace Tech.Tasks
 {
     public class SystemData
-    { 
+    {
+
         public void Run()
         {
             Car car1 = new Car() { name = "Volvo" };
             Car car2 = new Car() { name = "Subaro" };
+
+            car1.PrintCarDetails();
+            IPerson d = car1;
+            d.SetName("Mazda");            
+            car1.GetName();
+
+            d.GetName();
 
             MyInterfaces p1 = new MyInterfaces() { name = "Avi" };
             MyInterfaces p2 = new MyInterfaces() { name = "Shalom" };
@@ -22,7 +30,22 @@ namespace Tech.Tasks
             PrintLabels(p1);
             PrintLabels(p2);
 
-            IPerson ip1 = new Car();
+            IPerson ip1 = new Car() {name="Tesla",number=123123 };
+            IPerson ip2 = new MyInterfaces() {name="Shlomo" };
+            IPerson ip3;
+            
+
+            ip1.GetName();
+            ip2.GetName();
+
+            ip3 = ip1;
+            ip3.GetName();
+            ip1 = ip2;
+            ip2.GetName();
+            ip1.GetName();
+
+            ip2 = ip3;
+            ip2.GetName();
 
             MyWorker mw = new MyWorker() { id = 111, name = "Ämram" };
             UsePrinter(mw);

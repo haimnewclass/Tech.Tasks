@@ -14,6 +14,9 @@ namespace Tech.Tasks
         }
         static void Main(string[] args)
         {
+            GenericsSample gs = new GenericsSample();
+            gs.Run();
+
             SystemData sd = new SystemData();
             sd.Run();
 
