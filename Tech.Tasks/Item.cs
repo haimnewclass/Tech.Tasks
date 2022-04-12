@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Tech.Tasks
-{
+{  
     public class Item
     {      
         public int CalculatePrice(int itemPrice, CalcTask callToTaxcalculation)
