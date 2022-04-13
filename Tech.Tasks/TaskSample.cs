@@ -8,6 +8,8 @@ namespace Tech.Tasks
 {
     public class TaskSample
     {
+
+       
         public void myAction1()
         {
             for (int i = 0; i < 10; i++)
@@ -25,10 +27,12 @@ namespace Tech.Tasks
                 System.Threading.Thread.Sleep(900);
             }
         }
-        public void Run()
+        public async void Run()
         {
-            Task.Run(myAction1);
-            Task.Run(myAction2);
+            var s = await CreatePrintLongTask2();
+            s = await CreatePrintLongTask2();
+            //  Task.Run(myAction1);
+            // Task.Run(myAction2);
         }
 
         public async void RunLong()
@@ -38,8 +42,44 @@ namespace Tech.Tasks
            Console.WriteLine("After Start CreatePrintLongTask");
         }
 
+        public Task<string> CreatePrintLongTask()
+        {
+            Task<string> ret = Task.Factory.StartNew(() =>
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    Console.WriteLine(i);
+                    System.Threading.Thread.Sleep(1000);
+                }
+                return "123";
+            }
+           
+            );
 
-        public Task CreatePrintLongTask()
+            return ret;
+        }
+
+
+        public async Task<string> CreatePrintLongTask2()
+        {
+            Task<string> ret = Task.Factory.StartNew(() =>
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    Console.WriteLine(i);
+                    System.Threading.Thread.Sleep(1000);
+
+                }
+                return "123";
+            }
+
+            );
+            await Task.Delay(1000);
+
+            return "123";
+        }
+
+        public Task CreatePrintLongTask1()
         {           
             Task ret = Task.Factory.StartNew(() =>
             {

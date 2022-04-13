@@ -12,16 +12,29 @@ namespace Tech.Tasks
         {
 
         }
-        static void Main(string[] args)
+        static   void Main(string[] args)
         {
+
+            TaskSample ts = new TaskSample();
+            ts.Run();
+            /*
+             while(t1.Status != TaskStatus.RanToCompletion)
+             {
+
+             }
+            */
+
+
+
+            //   Console.WriteLine(t1.Result);
+
             GenericsSample gs = new GenericsSample();
             gs.Run();
 
             SystemData sd = new SystemData();
             sd.Run();
 
-            TaskSample ts = new TaskSample();
-            ts.RunLong();
+            
             int number = int.Parse(Console.ReadLine());
             WriteStart ws = new WriteStart();
             ws.linesNumer = number ;
@@ -42,7 +55,6 @@ namespace Tech.Tasks
 
 
 
-            ts.Run();
             Console.ReadLine();
         }
 
